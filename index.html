@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>校讯快递</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vender/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vender//bootstrap-3.1.1-dist/css/bootstrap-theme.min.css">
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+.spinner {
+  width: 30px;
+  height: 30px;
+  background-color: #333;
+
+  -webkit-animation: rotateplane 1.2s infinite ease-in-out;
+  animation: rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">校讯快递 | 请登陆</h2>
+        <input id="username" type="username" class="form-control" placeholder="用户名" required autofocus>
+        <input id="password" type="password" class="form-control" placeholder="密码" required>
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> 记住我
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="loginBtn">登陆</button>
+      </form>
+      
+    </div> <!-- /container -->
+
+<!-- Small modal -->
+
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none; margin-top:100px;">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="mySmallModalLabel">出错了</h4>
+        </div>
+        <div class="modal-body">
+          用户名或密码错误，请返回重试。
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
+
+    <script src="vender/jquery-1.11.0.min.js"></script>
+    <script src="vender/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+    <script src="vender/underscore.js"></script>
+    <script src="vender/backbone.js"></script>
+    <script src="vender/jquery.transit.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script defer="defer">
+      var app = new AppView();
+      app.render();
+    </script>
+  </body>
+</html>
